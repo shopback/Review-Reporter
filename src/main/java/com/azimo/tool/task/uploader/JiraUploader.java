@@ -8,6 +8,8 @@ import com.azimo.tool.publisher.collection.ReviewCollection;
 import com.azimo.tool.publisher.model.AppReview;
 import com.azimo.tool.task.interfaces.Uploader;
 import com.azimo.tool.utils.converter.IssueConverter;
+import com.google.api.client.json.Json;
+import com.google.gson.Gson;
 
 /**
  * Created by F1sherKK on 27/01/17.
@@ -32,6 +34,7 @@ public class JiraUploader implements Uploader<ReviewCollection, CreatedIssueColl
                 CreatedIssue createdIssue = issueConverter.createdIssueFrom(review);
                 createdIssueCollection.add(createdIssue);
             } catch (Exception ignored) {
+                ignored.printStackTrace();
             }
         }
         return createdIssueCollection;

@@ -45,11 +45,15 @@ public class AndroidPublisherAuth {
                 JSON_FACTORY = androidPublisherBuilder.newJacksonFactory();
             }
 
-            credential = androidPublisherBuilder.authorizeWithServiceAccount(
-                serviceAccountEmail,
-                googlePlayCredentialsFilePath,
-                HTTP_TRANSPORT,
-                JSON_FACTORY);
+//            credential = androidPublisherBuilder.authorizeWithServiceAccount(
+//                serviceAccountEmail,
+//                googlePlayCredentialsFilePath,
+//                HTTP_TRANSPORT,
+//                JSON_FACTORY);
+
+            credential = androidPublisherBuilder.authorizeWithServiceAccount(googlePlayCredentialsFilePath,
+                    HTTP_TRANSPORT,
+                    JSON_FACTORY);
 
         } catch (Exception e) {
             e.printStackTrace();

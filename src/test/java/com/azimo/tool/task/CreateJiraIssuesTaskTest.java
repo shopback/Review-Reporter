@@ -48,7 +48,7 @@ public class CreateJiraIssuesTaskTest {
     @Test
     public void testWhenPerformingRun_shouldFetchUncreatedIssuesAndSendThemToJiraAndFirebase() throws Exception {
         when(uncreatedIssuesProvider.fetch()).thenReturn(unreportedToJiraReviews);
-        when(unreportedToJiraReviews.getWithMinThreeStars()).thenReturn(unreportedToJiraReviews);
+        when(unreportedToJiraReviews.getWithMinOneStar()).thenReturn(unreportedToJiraReviews);
         when(firebaseServiceManager.getCreatedIssues()).thenReturn(createdIssues);
         when(jiraUploader.upload(unreportedToJiraReviews)).thenReturn(createdIssues);
         when(firebaseIssuesUploader.upload(createdIssues)).thenReturn(new DefaultFirebaseResponse());

@@ -132,7 +132,7 @@ public class ReviewCollectionTest {
             new AppReview(review_two_star),
             new AppReview(review_one_star)));
 
-        ReviewCollection filteredReviewCollection = reviewCollection.getWithMinThreeStars();
+        ReviewCollection filteredReviewCollection = reviewCollection.getWithMinOneStar();
 
         assertThat(reviewCollection.size() == 5, is(true));
         assertThat(filteredReviewCollection.size() == 3, is(true));

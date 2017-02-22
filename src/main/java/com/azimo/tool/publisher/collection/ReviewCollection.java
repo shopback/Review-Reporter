@@ -26,8 +26,8 @@ public class ReviewCollection extends ArrayList<AppReview> {
         return filteredReviewCollection;
     }
 
-    public ReviewCollection getWithMinThreeStars() {
-        final int minStartRating = 3;
+    public ReviewCollection getWithMinOneStar() {
+        final int minStartRating = 1;
 
         ReviewCollection filteredReviewCollection = new ReviewCollection();
 

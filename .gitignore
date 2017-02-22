@@ -25,6 +25,7 @@ hs_err_pid*
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
+.idea/*
 
 # Gradle:
 .idea/gradle.xml
@@ -56,3 +57,6 @@ fabric.properties
 # Gradle files
 .gradle/
 build/
+configFile.txt
+credentialsGoogle.json
+credentialsFirebase.json

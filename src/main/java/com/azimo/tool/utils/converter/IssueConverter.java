@@ -47,6 +47,7 @@ public class IssueConverter {
         final String appVersionLabel = "*App version:*";
         final String starRatingLabel = "*Stars:*";
         final String linkLabel = "*Link to review:*";
+        final String jiraLabel = "android_app_review";
 
         String author = "";
         String reviewId = "";
@@ -63,6 +64,8 @@ public class IssueConverter {
         issue.setProject(config.get(AppConfigKey.JIRA_PROJECT_NAME));
         issue.setIssueType(config.get(AppConfigKey.JIRA_ISSUE_TYPE));
         issue.setAssignee(config.get(AppConfigKey.JIRA_ASSIGNEE));
+        issue.setReporter(config.get(AppConfigKey.JIRA_ASSIGNEE));
+        issue.addLabels(jiraLabel);
 
         author = review.getAuthorName();
         reviewId = review.getReviewId();

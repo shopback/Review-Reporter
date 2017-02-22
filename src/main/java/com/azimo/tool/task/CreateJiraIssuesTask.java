@@ -42,11 +42,11 @@ public class CreateJiraIssuesTask extends ReviewReporterTask {
 
         ReviewCollection reviewsWithoutIssuesCreated = uncreatedIssuesProvider.fetch();
 
-        ReviewCollection notReportedReviewsWithThreeOrLessStars = reviewsWithoutIssuesCreated.getWithMinThreeStars();
-        System.out.println(TAG + "There are " + notReportedReviewsWithThreeOrLessStars.size()
-            + " reviews, with three stars or less, without Jira issue created.");
+        ReviewCollection notReportedReviewsWithOneStar = reviewsWithoutIssuesCreated.getWithMinOneStar();
+        System.out.println(TAG + "There are " + notReportedReviewsWithOneStar.size()
+            + " reviews, with one star, without Jira issue created.");
 
-        CreatedIssueCollection createdIssuesRecently = jiraUploader.upload(notReportedReviewsWithThreeOrLessStars);
+        CreatedIssueCollection createdIssuesRecently = jiraUploader.upload(notReportedReviewsWithOneStar);
         System.out.println(TAG + "Created " + createdIssuesRecently.size() + " Jira issues.");
 
         CreatedIssueCollection createdIssuesAllTime = firebaseServiceManager.getCreatedIssues();
